@@ -6,18 +6,6 @@ import java.util.ArrayList;
 
 public class BinaryAlgorithm {
 
-  public static void main(String[] args) {
-    ArrayList<Integer> numbers = new ArrayList<>();
-    numbers.add(1);
-    numbers.add(3);
-    numbers.add(5);
-    numbers.add(7);
-    numbers.add(9);
-
-    System.out.println(indexOf(numbers, 4, 0, numbers.size()));
-
-  }
-
   /**
    * Поиск числа target в списке numbers
    *
@@ -25,7 +13,7 @@ public class BinaryAlgorithm {
    * @param target  число, которое необходимо найти
    * @return индекс числа target в списке numbers или -1, если число не найдено
    */
-  public static int indexOf(ArrayList<Integer> numbers, int target, int left, int right) {
+  public static int myIndexOf(ArrayList<Integer> numbers, int target, int left, int right) {
 
     //condition for exit from recursion if right-left = 0 or 1 and that number is target
     if (left < numbers.size() && numbers.get(left) == target) {
@@ -45,9 +33,9 @@ public class BinaryAlgorithm {
 
     // recursion body, if numbers is not correct, start new function in new borders
     if (numbers.get(mid) < target) {
-      return indexOf(numbers, target, mid + 1, right);
+      return myIndexOf(numbers, target, mid + 1, right);
     } else { // не = и не <
-      return indexOf(numbers, target, left, mid);
+      return myIndexOf(numbers, target, left, mid);
     }
   }
 }
