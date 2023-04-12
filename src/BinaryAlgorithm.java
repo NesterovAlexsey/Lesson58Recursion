@@ -7,10 +7,16 @@ import java.util.ArrayList;
 public class BinaryAlgorithm {
 
   public static void main(String[] args) {
-    
+    ArrayList<Integer> numbers = new ArrayList<>();
+    numbers.add(1);
+    numbers.add(3);
+    numbers.add(5);
+    numbers.add(7);
+    numbers.add(9);
+
+    System.out.println(indexOf(numbers, 4, 0, numbers.size()));
+
   }
-//  int left = 0;
-//  int right = numbers.size();
 
   /**
    * Поиск числа target в списке numbers
